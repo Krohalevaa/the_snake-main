@@ -26,6 +26,9 @@ APPLE_COLOR = (255, 0, 0)
 # Цвет змейки
 SNAKE_COLOR = (0, 255, 0)
 
+# Цвет по умолчанию
+DEFAULT_COLOR = (100, 100, 100)
+
 # Скорость движения змейки:
 SPEED = 20
 
@@ -46,7 +49,6 @@ def handle_quit(event):
         raise SystemExit
 
 
-# Функция обработки действий пользователя
 def handle_keys(game_object):
     """Функция обработки действий пользователя.
     Обрабатывает нажатия клавиш для изменения направления
@@ -65,12 +67,12 @@ def handle_keys(game_object):
                 game_object.next_direction = RIGHT
 
 
-# Тут опишите все классы игры.
 class GameObject:
     """Класс, в котором отображаются объекты игрового поля."""
 
-    def __init__(self, position) -> None:
+    def __init__(self, position=(0, 0)) -> None:
         self.position = position
+        self.body_color = DEFAULT_COLOR
 
     def draw(self):
         """Нарисовать объект ЦЕЛИКОМ"""
