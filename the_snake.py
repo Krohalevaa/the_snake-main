@@ -1,5 +1,4 @@
 from random import randint
-
 import pygame as pg
 
 # Константы для размеров поля и сетки:
@@ -82,7 +81,7 @@ class GameObject:
 class Apple(GameObject):
     """Класс, в котором описываются все необходимое для работы яблока"""
 
-    def __init__(self, snake_body, body_color=APPLE_COLOR) -> None:
+    def __init__(self, snake_body=(0, 0), body_color=APPLE_COLOR) -> None:
         self.body_color = body_color
         self.snake_body = snake_body
         self.randomize_position(snake_body)
